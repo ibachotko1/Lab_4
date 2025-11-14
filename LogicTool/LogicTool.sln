@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicTool.Core", "LogicTool.Core\LogicTool.Core.csproj", "{850531BB-BE66-440A-8C05-75708A7349F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicTool.Business", "LogicTool.Business\LogicTool.Business.csproj", "{2DE9A7E7-949E-4634-802C-C69281D903E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{850531BB-BE66-440A-8C05-75708A7349F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{850531BB-BE66-440A-8C05-75708A7349F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{850531BB-BE66-440A-8C05-75708A7349F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{850531BB-BE66-440A-8C05-75708A7349F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DE9A7E7-949E-4634-802C-C69281D903E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DE9A7E7-949E-4634-802C-C69281D903E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DE9A7E7-949E-4634-802C-C69281D903E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DE9A7E7-949E-4634-802C-C69281D903E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9468629-A2BF-4B5E-B4A5-A639449A4201}
+	EndGlobalSection
+EndGlobal

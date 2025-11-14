@@ -1,0 +1,2 @@
+C:\Users\Dmitriy\source\repos\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.csproj.AssemblyReference.cache
+C:\Users\Dmitriy\source\repos\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.csproj.CoreCompileInputs.cache

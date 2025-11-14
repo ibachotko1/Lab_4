@@ -1,0 +1,340 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2DE9A7E7-949E-4634-802C-C69281D903E4}|LogicTool.Business\\LogicTool.Business.csproj|c:\\users\\dmitriy\\source\\repos\\logictool\\logictool.business\\interfaces\\ibooleanfunctionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DE9A7E7-949E-4634-802C-C69281D903E4}|LogicTool.Business\\LogicTool.Business.csproj|solutionrelative:logictool.business\\interfaces\\ibooleanfunctionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DE9A7E7-949E-4634-802C-C69281D903E4}|LogicTool.Business\\LogicTool.Business.csproj|c:\\users\\dmitriy\\source\\repos\\logictool\\logictool.business\\interfaces\\icomparisonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DE9A7E7-949E-4634-802C-C69281D903E4}|LogicTool.Business\\LogicTool.Business.csproj|solutionrelative:logictool.business\\interfaces\\icomparisonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DE9A7E7-949E-4634-802C-C69281D903E4}|LogicTool.Business\\LogicTool.Business.csproj|c:\\users\\dmitriy\\source\\repos\\logictool\\logictool.business\\services\\comparisonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DE9A7E7-949E-4634-802C-C69281D903E4}|LogicTool.Business\\LogicTool.Business.csproj|solutionrelative:logictool.business\\services\\comparisonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DE9A7E7-949E-4634-802C-C69281D903E4}|LogicTool.Business\\LogicTool.Business.csproj|c:\\users\\dmitriy\\source\\repos\\logictool\\logictool.business\\services\\booleanfunctionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DE9A7E7-949E-4634-802C-C69281D903E4}|LogicTool.Business\\LogicTool.Business.csproj|solutionrelative:logictool.business\\services\\booleanfunctionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|c:\\users\\dmitriy\\source\\repos\\logictool\\logictool.core\\exceptions\\functiongenerationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|solutionrelative:logictool.core\\exceptions\\functiongenerationexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\logictool.core\\exceptions\\formulaparseexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|solutionrelative:logictool.core\\exceptions\\formulaparseexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\logictool.core\\services\\formulaparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|solutionrelative:logictool.core\\services\\formulaparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|c:\\users\\dmitriy\\source\\repos\\logictool\\logictool.core\\models\\booleanfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|solutionrelative:logictool.core\\models\\booleanfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\logictool.core\\enums\\errorseverity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|solutionrelative:logictool.core\\enums\\errorseverity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\logictool.core\\models\\parsingresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|solutionrelative:logictool.core\\models\\parsingresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\logictool.core\\models\\comparisonresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|solutionrelative:logictool.core\\models\\comparisonresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\logictool.core\\models\\formulametrics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|solutionrelative:logictool.core\\models\\formulametrics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\logictool.core\\models\\truthtablerow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|solutionrelative:logictool.core\\models\\truthtablerow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\logictool.core\\models\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|solutionrelative:logictool.core\\models\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\logictool.core\\enums\\complexitylevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|solutionrelative:logictool.core\\enums\\complexitylevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\logictool.core\\enums\\comparisonresulttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|solutionrelative:logictool.core\\enums\\comparisonresulttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\logictool.core\\enums\\normalformtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|solutionrelative:logictool.core\\enums\\normalformtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\logictool.core\\enums\\tokentype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|solutionrelative:logictool.core\\enums\\tokentype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\logictool.core\\enums\\operatortype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{850531BB-BE66-440A-8C05-75708A7349F2}|LogicTool.Core\\LogicTool.Core.csproj|solutionrelative:logictool.core\\enums\\operatortype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ComparisonService.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Business\\Services\\ComparisonService.cs",
+              "RelativeDocumentMoniker": "LogicTool.Business\\Services\\ComparisonService.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Business\\Services\\ComparisonService.cs",
+              "RelativeToolTip": "LogicTool.Business\\Services\\ComparisonService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:40:25.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BooleanFunctionService.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Business\\Services\\BooleanFunctionService.cs",
+              "RelativeDocumentMoniker": "LogicTool.Business\\Services\\BooleanFunctionService.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Business\\Services\\BooleanFunctionService.cs",
+              "RelativeToolTip": "LogicTool.Business\\Services\\BooleanFunctionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:39:59.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IComparisonService.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Business\\Interfaces\\IComparisonService.cs",
+              "RelativeDocumentMoniker": "LogicTool.Business\\Interfaces\\IComparisonService.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Business\\Interfaces\\IComparisonService.cs",
+              "RelativeToolTip": "LogicTool.Business\\Interfaces\\IComparisonService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:39:15.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IBooleanFunctionService.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Business\\Interfaces\\IBooleanFunctionService.cs",
+              "RelativeDocumentMoniker": "LogicTool.Business\\Interfaces\\IBooleanFunctionService.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Business\\Interfaces\\IBooleanFunctionService.cs",
+              "RelativeToolTip": "LogicTool.Business\\Interfaces\\IBooleanFunctionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:38:37.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FunctionGenerationException.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Exceptions\\FunctionGenerationException.cs",
+              "RelativeDocumentMoniker": "LogicTool.Core\\Exceptions\\FunctionGenerationException.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Exceptions\\FunctionGenerationException.cs",
+              "RelativeToolTip": "LogicTool.Core\\Exceptions\\FunctionGenerationException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-14T13:37:32.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{56df62a4-05a3-4e5b-aa1a-99371ccfb997}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BooleanFunction.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Models\\BooleanFunction.cs",
+              "RelativeDocumentMoniker": "LogicTool.Core\\Models\\BooleanFunction.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Models\\BooleanFunction.cs",
+              "RelativeToolTip": "LogicTool.Core\\Models\\BooleanFunction.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAtwGwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T09:44:58.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ComplexityLevel.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Enums\\ComplexityLevel.cs",
+              "RelativeDocumentMoniker": "LogicTool.Core\\Enums\\ComplexityLevel.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Enums\\ComplexityLevel.cs",
+              "RelativeToolTip": "LogicTool.Core\\Enums\\ComplexityLevel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T09:51:48.208Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TruthTableRow.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Models\\TruthTableRow.cs",
+              "RelativeDocumentMoniker": "LogicTool.Core\\Models\\TruthTableRow.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Models\\TruthTableRow.cs",
+              "RelativeToolTip": "LogicTool.Core\\Models\\TruthTableRow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T09:45:31.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FormulaMetrics.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Models\\FormulaMetrics.cs",
+              "RelativeDocumentMoniker": "LogicTool.Core\\Models\\FormulaMetrics.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Models\\FormulaMetrics.cs",
+              "RelativeToolTip": "LogicTool.Core\\Models\\FormulaMetrics.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T09:45:48.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormulaParser.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Services\\FormulaParser.cs",
+              "RelativeDocumentMoniker": "LogicTool.Core\\Services\\FormulaParser.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Services\\FormulaParser.cs",
+              "RelativeToolTip": "LogicTool.Core\\Services\\FormulaParser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T09:46:30.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormulaParseException.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Exceptions\\FormulaParseException.cs",
+              "RelativeDocumentMoniker": "LogicTool.Core\\Exceptions\\FormulaParseException.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Exceptions\\FormulaParseException.cs",
+              "RelativeToolTip": "LogicTool.Core\\Exceptions\\FormulaParseException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T09:47:11.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Token.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Models\\Token.cs",
+              "RelativeDocumentMoniker": "LogicTool.Core\\Models\\Token.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Models\\Token.cs",
+              "RelativeToolTip": "LogicTool.Core\\Models\\Token.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T10:10:07.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ParsingResult.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Models\\ParsingResult.cs",
+              "RelativeDocumentMoniker": "LogicTool.Core\\Models\\ParsingResult.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Models\\ParsingResult.cs",
+              "RelativeToolTip": "LogicTool.Core\\Models\\ParsingResult.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAmwFsAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T10:11:36.343Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ErrorSeverity.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Enums\\ErrorSeverity.cs",
+              "RelativeDocumentMoniker": "LogicTool.Core\\Enums\\ErrorSeverity.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Enums\\ErrorSeverity.cs",
+              "RelativeToolTip": "LogicTool.Core\\Enums\\ErrorSeverity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T10:12:00.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ComparisonResultType.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Enums\\ComparisonResultType.cs",
+              "RelativeDocumentMoniker": "LogicTool.Core\\Enums\\ComparisonResultType.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Enums\\ComparisonResultType.cs",
+              "RelativeToolTip": "LogicTool.Core\\Enums\\ComparisonResultType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T09:54:21.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ComparisonResult.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Models\\ComparisonResult.cs",
+              "RelativeDocumentMoniker": "LogicTool.Core\\Models\\ComparisonResult.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Models\\ComparisonResult.cs",
+              "RelativeToolTip": "LogicTool.Core\\Models\\ComparisonResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T09:46:11.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "NormalFormType.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Enums\\NormalFormType.cs",
+              "RelativeDocumentMoniker": "LogicTool.Core\\Enums\\NormalFormType.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Enums\\NormalFormType.cs",
+              "RelativeToolTip": "LogicTool.Core\\Enums\\NormalFormType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T09:50:50.697Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TokenType.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Enums\\TokenType.cs",
+              "RelativeDocumentMoniker": "LogicTool.Core\\Enums\\TokenType.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Enums\\TokenType.cs",
+              "RelativeToolTip": "LogicTool.Core\\Enums\\TokenType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T09:50:07.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "OperatorType.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Enums\\OperatorType.cs",
+              "RelativeDocumentMoniker": "LogicTool.Core\\Enums\\OperatorType.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\source\\repos\\LogicTool\\LogicTool.Core\\Enums\\OperatorType.cs",
+              "RelativeToolTip": "LogicTool.Core\\Enums\\OperatorType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-12T09:49:47.399Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
