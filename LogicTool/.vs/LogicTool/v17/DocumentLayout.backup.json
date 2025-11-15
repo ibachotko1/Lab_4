@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7EF53EFB-8EDC-48D7-8D31-D2EBBA947857}|LogicTool.Tests\\LogicTool.Tests.csproj|c:\\users\\dmitriy\\documents\\github\\lab_4\\logictool\\logictool.tests\\models\\parsingresulttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF53EFB-8EDC-48D7-8D31-D2EBBA947857}|LogicTool.Tests\\LogicTool.Tests.csproj|solutionrelative:logictool.tests\\models\\parsingresulttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF53EFB-8EDC-48D7-8D31-D2EBBA947857}|LogicTool.Tests\\LogicTool.Tests.csproj|c:\\users\\dmitriy\\documents\\github\\lab_4\\logictool\\logictool.tests\\models\\tokentests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF53EFB-8EDC-48D7-8D31-D2EBBA947857}|LogicTool.Tests\\LogicTool.Tests.csproj|solutionrelative:logictool.tests\\models\\tokentests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF53EFB-8EDC-48D7-8D31-D2EBBA947857}|LogicTool.Tests\\LogicTool.Tests.csproj|c:\\users\\dmitriy\\documents\\github\\lab_4\\logictool\\logictool.tests\\enums\\enumtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF53EFB-8EDC-48D7-8D31-D2EBBA947857}|LogicTool.Tests\\LogicTool.Tests.csproj|solutionrelative:logictool.tests\\enums\\enumtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EF53EFB-8EDC-48D7-8D31-D2EBBA947857}|LogicTool.Tests\\LogicTool.Tests.csproj|c:\\users\\dmitriy\\documents\\github\\lab_4\\logictool\\logictool.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EF53EFB-8EDC-48D7-8D31-D2EBBA947857}|LogicTool.Tests\\LogicTool.Tests.csproj|solutionrelative:logictool.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0D4672B9-55FC-4DA8-98D0-8AC217EBD520}|LogicTool.UI\\LogicTool.UI.csproj|c:\\users\\dmitriy\\documents\\github\\lab_4\\logictool\\logictool.ui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D4672B9-55FC-4DA8-98D0-8AC217EBD520}|LogicTool.UI\\LogicTool.UI.csproj|solutionrelative:logictool.ui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -106,11 +122,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
+              "Title": "ParsingResultTests.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Tests\\Models\\ParsingResultTests.cs",
+              "RelativeDocumentMoniker": "LogicTool.Tests\\Models\\ParsingResultTests.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Tests\\Models\\ParsingResultTests.cs",
+              "RelativeToolTip": "LogicTool.Tests\\Models\\ParsingResultTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T06:06:10.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TokenTests.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Tests\\Models\\TokenTests.cs",
+              "RelativeDocumentMoniker": "LogicTool.Tests\\Models\\TokenTests.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Tests\\Models\\TokenTests.cs",
+              "RelativeToolTip": "LogicTool.Tests\\Models\\TokenTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T06:05:28.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EnumTests.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Tests\\Enums\\EnumTests.cs",
+              "RelativeDocumentMoniker": "LogicTool.Tests\\Enums\\EnumTests.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Tests\\Enums\\EnumTests.cs",
+              "RelativeToolTip": "LogicTool.Tests\\Enums\\EnumTests.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAA3wBwAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T06:04:39.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Tests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "LogicTool.Tests\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Tests\\UnitTest1.cs",
+              "RelativeToolTip": "LogicTool.Tests\\UnitTest1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T06:03:38.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.UI\\App.config",
               "RelativeDocumentMoniker": "LogicTool.UI\\App.config",
@@ -122,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.UI\\App.xaml.cs",
               "RelativeDocumentMoniker": "LogicTool.UI\\App.xaml.cs",
@@ -134,7 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.UI\\App.xaml",
               "RelativeDocumentMoniker": "LogicTool.UI\\App.xaml",
@@ -145,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.UI\\MainWindow.xaml",
               "RelativeDocumentMoniker": "LogicTool.UI\\MainWindow.xaml",
@@ -156,20 +224,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.UI\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "LogicTool.UI\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.UI\\MainWindow.xaml.cs",
               "RelativeToolTip": "LogicTool.UI\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAAwDsBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-14T16:50:46.612Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "ComparisonService.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Business\\Services\\ComparisonService.cs",
               "RelativeDocumentMoniker": "LogicTool.Business\\Services\\ComparisonService.cs",
@@ -181,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "BooleanFunctionService.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Business\\Services\\BooleanFunctionService.cs",
               "RelativeDocumentMoniker": "LogicTool.Business\\Services\\BooleanFunctionService.cs",
@@ -193,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "IComparisonService.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Business\\Interfaces\\IComparisonService.cs",
               "RelativeDocumentMoniker": "LogicTool.Business\\Interfaces\\IComparisonService.cs",
@@ -205,7 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "IBooleanFunctionService.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Business\\Interfaces\\IBooleanFunctionService.cs",
               "RelativeDocumentMoniker": "LogicTool.Business\\Interfaces\\IBooleanFunctionService.cs",
@@ -217,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "FunctionGenerationException.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Core\\Exceptions\\FunctionGenerationException.cs",
               "RelativeDocumentMoniker": "LogicTool.Core\\Exceptions\\FunctionGenerationException.cs",
@@ -229,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "BooleanFunction.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Core\\Models\\BooleanFunction.cs",
               "RelativeDocumentMoniker": "LogicTool.Core\\Models\\BooleanFunction.cs",
@@ -241,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "ComplexityLevel.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Core\\Enums\\ComplexityLevel.cs",
               "RelativeDocumentMoniker": "LogicTool.Core\\Enums\\ComplexityLevel.cs",
@@ -253,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "TruthTableRow.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Core\\Models\\TruthTableRow.cs",
               "RelativeDocumentMoniker": "LogicTool.Core\\Models\\TruthTableRow.cs",
@@ -265,7 +333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "FormulaMetrics.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Core\\Models\\FormulaMetrics.cs",
               "RelativeDocumentMoniker": "LogicTool.Core\\Models\\FormulaMetrics.cs",
@@ -277,7 +345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "FormulaParser.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Core\\Services\\FormulaParser.cs",
               "RelativeDocumentMoniker": "LogicTool.Core\\Services\\FormulaParser.cs",
@@ -289,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "FormulaParseException.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Core\\Exceptions\\FormulaParseException.cs",
               "RelativeDocumentMoniker": "LogicTool.Core\\Exceptions\\FormulaParseException.cs",
@@ -301,7 +369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Token.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Core\\Models\\Token.cs",
               "RelativeDocumentMoniker": "LogicTool.Core\\Models\\Token.cs",
@@ -313,7 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "ParsingResult.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Core\\Models\\ParsingResult.cs",
               "RelativeDocumentMoniker": "LogicTool.Core\\Models\\ParsingResult.cs",
@@ -325,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "ErrorSeverity.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Core\\Enums\\ErrorSeverity.cs",
               "RelativeDocumentMoniker": "LogicTool.Core\\Enums\\ErrorSeverity.cs",
@@ -337,7 +405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "ComparisonResultType.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Core\\Enums\\ComparisonResultType.cs",
               "RelativeDocumentMoniker": "LogicTool.Core\\Enums\\ComparisonResultType.cs",
@@ -349,7 +417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "ComparisonResult.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Core\\Models\\ComparisonResult.cs",
               "RelativeDocumentMoniker": "LogicTool.Core\\Models\\ComparisonResult.cs",
@@ -361,7 +429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "NormalFormType.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Core\\Enums\\NormalFormType.cs",
               "RelativeDocumentMoniker": "LogicTool.Core\\Enums\\NormalFormType.cs",
@@ -373,7 +441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "TokenType.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Core\\Enums\\TokenType.cs",
               "RelativeDocumentMoniker": "LogicTool.Core\\Enums\\TokenType.cs",
@@ -385,7 +453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "OperatorType.cs",
               "DocumentMoniker": "C:\\Users\\Dmitriy\\Documents\\GitHub\\Lab_4\\LogicTool\\LogicTool.Core\\Enums\\OperatorType.cs",
               "RelativeDocumentMoniker": "LogicTool.Core\\Enums\\OperatorType.cs",
