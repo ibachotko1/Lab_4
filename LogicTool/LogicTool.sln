@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicTool.Core", "LogicTool
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicTool.Business", "LogicTool.Business\LogicTool.Business.csproj", "{2DE9A7E7-949E-4634-802C-C69281D903E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicTool.UI", "LogicTool.UI\LogicTool.UI.csproj", "{0D4672B9-55FC-4DA8-98D0-8AC217EBD520}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2DE9A7E7-949E-4634-802C-C69281D903E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DE9A7E7-949E-4634-802C-C69281D903E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DE9A7E7-949E-4634-802C-C69281D903E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D4672B9-55FC-4DA8-98D0-8AC217EBD520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D4672B9-55FC-4DA8-98D0-8AC217EBD520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D4672B9-55FC-4DA8-98D0-8AC217EBD520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D4672B9-55FC-4DA8-98D0-8AC217EBD520}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

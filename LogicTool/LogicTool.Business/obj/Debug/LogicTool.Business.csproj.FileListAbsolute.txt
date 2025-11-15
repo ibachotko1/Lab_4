@@ -1,0 +1,9 @@
+D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Business\bin\Debug\LogicTool.Business.dll
+D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Business\bin\Debug\LogicTool.Business.pdb
+D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Business\bin\Debug\LogicTool.Core.dll
+D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Business\bin\Debug\LogicTool.Core.pdb
+D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.csproj.AssemblyReference.cache
+D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.csproj.CoreCompileInputs.cache
+D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Business\obj\Debug\LogicToo.65E5E7AC.Up2Date
+D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.dll
+D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.pdb

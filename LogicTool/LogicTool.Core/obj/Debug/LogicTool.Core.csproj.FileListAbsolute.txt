@@ -1,2 +1,8 @@
 C:\Users\Dmitriy\source\repos\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.csproj.AssemblyReference.cache
 C:\Users\Dmitriy\source\repos\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.csproj.CoreCompileInputs.cache
+D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Core\bin\Debug\LogicTool.Core.dll
+D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Core\bin\Debug\LogicTool.Core.pdb
+D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.csproj.AssemblyReference.cache
+D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.csproj.CoreCompileInputs.cache
+D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.dll
+D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.pdb
