@@ -7,3 +7,12 @@ D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\Logic
 D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Business\obj\Debug\LogicToo.65E5E7AC.Up2Date
 D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.dll
 D:\Desktop\Арина\Группа3_ЛР4\репозиторий\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.pdb
+C:\Users\miron\OneDrive\Документы\GitHub\Lab_4\LogicTool\LogicTool.Business\bin\Debug\LogicTool.Business.dll
+C:\Users\miron\OneDrive\Документы\GitHub\Lab_4\LogicTool\LogicTool.Business\bin\Debug\LogicTool.Business.pdb
+C:\Users\miron\OneDrive\Документы\GitHub\Lab_4\LogicTool\LogicTool.Business\bin\Debug\LogicTool.Core.dll
+C:\Users\miron\OneDrive\Документы\GitHub\Lab_4\LogicTool\LogicTool.Business\bin\Debug\LogicTool.Core.pdb
+C:\Users\miron\OneDrive\Документы\GitHub\Lab_4\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.csproj.AssemblyReference.cache
+C:\Users\miron\OneDrive\Документы\GitHub\Lab_4\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.csproj.CoreCompileInputs.cache
+C:\Users\miron\OneDrive\Документы\GitHub\Lab_4\LogicTool\LogicTool.Business\obj\Debug\LogicToo.65E5E7AC.Up2Date
+C:\Users\miron\OneDrive\Документы\GitHub\Lab_4\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.dll
+C:\Users\miron\OneDrive\Документы\GitHub\Lab_4\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.pdb
