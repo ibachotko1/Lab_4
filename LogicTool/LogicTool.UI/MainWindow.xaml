@@ -3,34 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converters="clr-namespace:LogicTool.UI.Converters"
         mc:Ignorable="d"
         Title="Логические функции — ЛР-4" Height="720" Width="1080"
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <!-- Конвертеры -->
-        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
-
-        <!-- Стили -->
-        <Style TargetType="Button">
-            <Setter Property="Margin" Value="5,2"/>
-            <Setter Property="Padding" Value="8,4"/>
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="Background" Value="#E0E0E0"/>
-            <Setter Property="BorderBrush" Value="#B0B0B0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#D0D0D0"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-        <Style TargetType="TextBox">
-            <Setter Property="Margin" Value="5,2"/>
-            <Setter Property="Padding" Value="5"/>
-            <Setter Property="FontSize" Value="13"/>
-        </Style>
+        <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter"/>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
     </Window.Resources>
 
     <Grid Margin="15">
@@ -48,32 +29,36 @@
                         <!-- Ввод -->
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                             <TextBlock Text="Количество переменных:" VerticalAlignment="Center" Margin="0,0,5,0"/>
-                            <TextBox Width="50" Text="{Binding VariableCount, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                            <TextBox Width="50" Text="{Binding NumberTab.VariableCount, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
                             <TextBlock Text="Номер функции:" VerticalAlignment="Center" Margin="15,0,5,0"/>
-                            <TextBox Width="100" Text="{Binding FunctionNumber, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
-                            <Button Content="Вычислить" Command="{Binding GenerateCommand}" Margin="10,0"/>
-                            <Button Content="Пресет: n=3, num=11" Command="{Binding Preset1Command}" Margin="10,0"/>
+                            <TextBox Width="100" Text="{Binding NumberTab.FunctionNumber, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                            <Button Content="Вычислить" Command="{Binding NumberTab.GenerateCommand}" Margin="10,0"/>
+                            <Button Content="Пресет: n=3, num=11" Command="{Binding NumberTab.PresetCommand}" Margin="10,0"/>
                         </StackPanel>
 
                         <!-- Бинарное представление -->
-                        <TextBlock Text="{Binding BinaryRepresentation}" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <TextBlock Text="{Binding NumberTab.BinaryRepresentation}" FontWeight="Bold" Margin="0,0,0,10"/>
 
                         <!-- Предупреждение -->
-                        <TextBlock Text="{Binding ComplexityWarning}" Foreground="Red" FontWeight="Bold" 
-                                   Visibility="{Binding ComplexityWarning, Converter={StaticResource BoolToVis}}" Margin="0,0,0,10"/>
+                        <TextBlock Text="{Binding NumberTab.ComplexityWarning}" Foreground="Red" FontWeight="Bold" 
+                                   Visibility="{Binding NumberTab.HasComplexityWarning, Converter={StaticResource BoolToVisibilityConverter}}" Margin="0,0,0,10"/>
+
+                        <!-- Расшифровка бинарного представления -->
+                        <TextBlock Text="{Binding NumberTab.BinaryExplanation}" FontStyle="Italic" Margin="0,0,0,10"
+                                   Visibility="{Binding NumberTab.HasBinaryExplanation, Converter={StaticResource BoolToVisibilityConverter}}"/>
 
                         <!-- Кнопки -->
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                            <Button Content="Таблица истинности" Command="{Binding ShowTruthTableCommand}"/>
-                            <Button Content="DNF" Command="{Binding ShowDNFCommand}"/>
-                            <Button Content="KNF" Command="{Binding ShowKNFCommand}"/>
+                            <Button Content="Таблица истинности" Command="{Binding NumberTab.ShowTruthTableCommand}"/>
+                            <Button Content="ДНФ" Command="{Binding NumberTab.ShowDnfCommand}"/>
+                            <Button Content="КНФ" Command="{Binding NumberTab.ShowKnfCommand}"/>
                         </StackPanel>
 
                         <!-- Результат -->
-                        <TextBlock Text="Результат:" FontWeight="Bold" Margin="0,0,0,5"/>
-                        <TextBox Text="{Binding ResultText}" IsReadOnly="True" AcceptsReturn="True" Height="200"
+                        <TextBlock Text="{Binding NumberTab.ResultTitle}" FontWeight="Bold" Margin="0,0,0,5"/>
+                        <TextBox Text="{Binding NumberTab.ResultText}" IsReadOnly="True" AcceptsReturn="True" Height="200"
                                  VerticalScrollBarVisibility="Auto"/>
-                        <Button Content="Копировать в буфер" Command="{Binding CopyResultCommand}" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+                        <Button Content="Копировать в буфер" Command="{Binding NumberTab.CopyCommand}" HorizontalAlignment="Left" Margin="0,10,0,0"/>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
@@ -84,22 +69,40 @@
                     <StackPanel Margin="10">
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                             <TextBlock Text="Формула:" VerticalAlignment="Center" Margin="0,0,5,0"/>
-                            <TextBox Width="300" Text="{Binding Formula, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
-                            <Button Content="Вычислить" Command="{Binding ParseCommand}" Margin="10,0"/>
-                            <Button Content="Пресет: (x1 | x2) -> x3" Command="{Binding Preset2Command}" Margin="10,0"/>
+                            <TextBox Width="300" Text="{Binding FormulaTab.Formula, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                            <Button Content="Разобрать" Command="{Binding FormulaTab.ParseCommand}" Margin="10,0"/>
+                            <Button Content="Пресет: (x1 | x2) -> x3" Command="{Binding FormulaTab.PresetCommand}" Margin="10,0"/>
                         </StackPanel>
 
-                        <TextBlock Text="-/! - НЕ, ∧/&amp; - И, ∨/| - ИЛИ, ^ - XOR, -> - импликация, => - эквивалентность" 
-                                    FontStyle="Italic" Foreground="Gray" Margin="0,0,0,10"/>
-                        <TextBlock Text="{Binding Status}" FontWeight="Bold" Foreground="{Binding StatusColor}" Margin="0,0,0,10"/>
+                        <TextBlock Text="{Binding FormulaTab.Legend}" FontStyle="Italic" Foreground="Gray" Margin="0,0,0,10"/>
 
-                        <TextBlock Text="{Binding ComplexityWarning}" Foreground="Red" FontWeight="Bold" 
-                                   Visibility="{Binding ComplexityWarning, Converter={StaticResource BoolToVis}}" Margin="0,0,0,10"/>
+                        <!-- Статус -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Статус:" Margin="0,0,5,0"/>
+                            <TextBlock Text="{Binding FormulaTab.StatusText}" Foreground="{Binding FormulaTab.StatusBrush}" FontWeight="Bold"/>
+                        </StackPanel>
 
-                        <TextBlock Text="Результат:" FontWeight="Bold" Margin="0,0,0,5"/>
-                        <TextBox Text="{Binding ResultText}" IsReadOnly="True" AcceptsReturn="True" Height="200"
-                                 VerticalScrollBarVisibility="Auto"/>
-                        <Button Content="Копировать в буфер" Command="{Binding CopyResultCommand}" HorizontalAlignment="Left" Margin="0,10,0,0"/>
+                        <!-- Предупреждение -->
+                        <TextBlock Text="{Binding FormulaTab.ComplexityWarning}" Foreground="Red" FontWeight="Bold" 
+                                   Visibility="{Binding FormulaTab.HasComplexityWarning, Converter={StaticResource BoolToVisibilityConverter}}" Margin="0,0,0,10"/>
+
+                        <!-- Базис -->
+                        <TextBlock Text="Представление в базисе {¬, ∧, ∨}:" FontWeight="Bold" Margin="0,10,0,5"
+                                   Visibility="{Binding FormulaTab.HasBasis, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                        <TextBox Text="{Binding FormulaTab.BasisText}" IsReadOnly="True" FontFamily="Consolas" Margin="0,0,0,10"
+                                 Visibility="{Binding FormulaTab.HasBasis, Converter={StaticResource BoolToVisibilityConverter}}"/>
+
+                        <!-- Конвейер разбора -->
+                        <TextBlock Text="Лексемы и ОПЗ:" FontWeight="Bold" Margin="0,10,0,5"
+                                   Visibility="{Binding FormulaTab.HasPipeline, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                        <TextBox Text="{Binding FormulaTab.PipelineText}" IsReadOnly="True" FontFamily="Consolas" Height="80" Margin="0,0,0,10"
+                                 Visibility="{Binding FormulaTab.HasPipeline, Converter={StaticResource BoolToVisibilityConverter}}"/>
+
+                        <!-- Результат -->
+                        <TextBlock Text="{Binding FormulaTab.ResultTitle}" FontWeight="Bold" Margin="0,0,0,5"/>
+                        <TextBox Text="{Binding FormulaTab.ResultText}" IsReadOnly="True" AcceptsReturn="True" Height="200"
+                                 VerticalScrollBarVisibility="Auto" FontFamily="Consolas"/>
+                        <Button Content="Копировать в буфер" Command="{Binding FormulaTab.CopyCommand}" HorizontalAlignment="Left" Margin="0,10,0,0"/>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
@@ -111,20 +114,20 @@
                         <!-- Функция 1 -->
                         <TextBlock Text="Функция 1:" FontWeight="Bold" Margin="0,0,0,5"/>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                            <RadioButton Content="Формула" IsChecked="{Binding IsFormula1}" Margin="0,0,10,0"/>
-                            <RadioButton Content="Номер" IsChecked="{Binding IsNumber1}" Margin="0,0,10,0"/>
+                            <RadioButton Content="Формула" IsChecked="{Binding ComparisonTab.FirstKind, Converter={x:Static converters:EnumToBooleanConverter.Default}, ConverterParameter=Formula}" Margin="0,0,10,0"/>
+                            <RadioButton Content="Номер" IsChecked="{Binding ComparisonTab.FirstKind, Converter={x:Static converters:EnumToBooleanConverter.Default}, ConverterParameter=Number}" Margin="0,0,10,0"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                            <Border Visibility="{Binding IsFormula1, Converter={StaticResource BoolToVis}}">
-                                <TextBox Width="250" Text="{Binding Formula1}"/>
+                            <Border Visibility="{Binding ComparisonTab.ShowFormula1, Converter={StaticResource BoolToVisibilityConverter}}">
+                                <TextBox Width="250" Text="{Binding ComparisonTab.Formula1, UpdateSourceTrigger=PropertyChanged}"/>
                             </Border>
-                            <Border Visibility="{Binding IsNumber1, Converter={StaticResource BoolToVis}}">
+                            <Border Visibility="{Binding ComparisonTab.ShowNumber1, Converter={StaticResource BoolToVisibilityConverter}}">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="n:" Margin="0,0,5,0"/>
-                                    <TextBox Width="40" Text="{Binding VarCount1}"/>
-                                    <TextBlock Text="num:" Margin="10,0,5,0"/>
-                                    <TextBox Width="60" Text="{Binding Number1}"/>
+                                    <TextBlock Text="n:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                    <TextBox Width="40" Text="{Binding ComparisonTab.VarCount1, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <TextBlock Text="num:" VerticalAlignment="Center" Margin="10,0,5,0"/>
+                                    <TextBox Width="60" Text="{Binding ComparisonTab.Number1, UpdateSourceTrigger=PropertyChanged}"/>
                                 </StackPanel>
                             </Border>
                         </StackPanel>
@@ -132,29 +135,36 @@
                         <!-- Функция 2 -->
                         <TextBlock Text="Функция 2:" FontWeight="Bold" Margin="0,20,0,5"/>
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                            <RadioButton Content="Формула" IsChecked="{Binding IsFormula2}" Margin="0,0,10,0"/>
-                            <RadioButton Content="Номер" IsChecked="{Binding IsNumber2}" Margin="0,0,10,0"/>
+                            <RadioButton Content="Формула" IsChecked="{Binding ComparisonTab.SecondKind, Converter={x:Static converters:EnumToBooleanConverter.Default}, ConverterParameter=Formula}" Margin="0,0,10,0"/>
+                            <RadioButton Content="Номер" IsChecked="{Binding ComparisonTab.SecondKind, Converter={x:Static converters:EnumToBooleanConverter.Default}, ConverterParameter=Number}" Margin="0,0,10,0"/>
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
-                            <Border Visibility="{Binding IsFormula2, Converter={StaticResource BoolToVis}}">
-                                <TextBox Width="250" Text="{Binding Formula2}"/>
+                            <Border Visibility="{Binding ComparisonTab.ShowFormula2, Converter={StaticResource BoolToVisibilityConverter}}">
+                                <TextBox Width="250" Text="{Binding ComparisonTab.Formula2, UpdateSourceTrigger=PropertyChanged}"/>
                             </Border>
-                            <Border Visibility="{Binding IsNumber2, Converter={StaticResource BoolToVis}}">
+                            <Border Visibility="{Binding ComparisonTab.ShowNumber2, Converter={StaticResource BoolToVisibilityConverter}}">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="n:" Margin="0,0,5,0"/>
-                                    <TextBox Width="40" Text="{Binding VarCount2}"/>
-                                    <TextBlock Text="num:" Margin="10,0,5,0"/>
-                                    <TextBox Width="60" Text="{Binding Number2}"/>
+                                    <TextBlock Text="n:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                                    <TextBox Width="40" Text="{Binding ComparisonTab.VarCount2, UpdateSourceTrigger=PropertyChanged}"/>
+                                    <TextBlock Text="num:" VerticalAlignment="Center" Margin="10,0,5,0"/>
+                                    <TextBox Width="60" Text="{Binding ComparisonTab.Number2, UpdateSourceTrigger=PropertyChanged}"/>
                                 </StackPanel>
                             </Border>
                         </StackPanel>
 
-                        <Button Content="Сравнить" Command="{Binding CompareCommand}" Margin="0,10,0,0"/>
-                        <Button Content="Пресет: эквивалентность DNF" Command="{Binding Preset3Command}" Margin="10,10,0,0"/>
+                        <TextBlock Text="{Binding ComparisonTab.Legend}" FontStyle="Italic" Foreground="Gray" Margin="0,0,0,10"/>
 
-                        <TextBlock Text="{Binding ComparisonResult}" FontWeight="Bold" Margin="0,15,0,5"/>
-                        <TextBlock Text="{Binding CounterExample}" Foreground="Red" Visibility="{Binding HasCounterExample, Converter={StaticResource BoolToVis}}"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <Button Content="Сравнить" Command="{Binding ComparisonTab.CompareCommand}"/>
+                            <Button Content="Пресет: эквивалентность ДНФ" Command="{Binding ComparisonTab.PresetCommand}" Margin="10,0,0,0"/>
+                        </StackPanel>
+
+                        <!-- Результат сравнения -->
+                        <TextBlock Text="{Binding ComparisonTab.ComparisonSummary}" FontWeight="Bold" Margin="0,15,0,5"/>
+                        <TextBlock Text="{Binding ComparisonTab.StatusDetail}" Margin="0,0,0,5"/>
+                        <TextBlock Text="{Binding ComparisonTab.CounterExample}" Foreground="Red" 
+                                   Visibility="{Binding ComparisonTab.HasCounterExample, Converter={StaticResource BoolToVisibilityConverter}}"/>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
@@ -185,12 +195,12 @@
 
                         <TextBlock Text="Поддерживаемые операторы:" FontWeight="Bold" FontSize="13" Margin="0,0,0,5"/>
                         <StackPanel Margin="10,0,0,10">
-                            <TextBlock Text="• НЕ: !x1, -x1" Margin="0,1,0,1"/>
-                            <TextBlock Text="• И: x1 &amp; x2, x1 ∧ x2" Margin="0,1,0,1"/>
-                            <TextBlock Text="• ИЛИ: x1 | x2, x1 ∨ x2" Margin="0,1,0,1"/>
+                            <TextBlock Text="• НЕ: !x1, -x1, not x1" Margin="0,1,0,1"/>
+                            <TextBlock Text="• И: x1 &amp; x2, x1 ∧ x2, x1 and x2" Margin="0,1,0,1"/>
+                            <TextBlock Text="• ИЛИ: x1 | x2, x1 ∨ x2, x1 or x2" Margin="0,1,0,1"/>
                             <TextBlock Text="• XOR: x1 ^ x2" Margin="0,1,0,1"/>
                             <TextBlock Text="• Импликация: x1 -&gt; x2" Margin="0,1,0,1"/>
-                            <TextBlock Text="• Эквивалентность: x1 =&gt; x2" Margin="0,1,0,1"/>
+                            <TextBlock Text="• Эквивалентность: x1 =&gt; x2, x1 = x2" Margin="0,1,0,1"/>
                         </StackPanel>
 
                         <TextBlock Text="Примеры формул:" FontWeight="Bold" FontSize="13" Margin="0,0,0,5"/>
@@ -207,7 +217,7 @@
                         <TextBlock Text="• При большом количестве переменных вычисления могут занять время" TextWrapping="Wrap" Margin="10,0,0,2"/>
                         <TextBlock Text="• Программа предупредит о высокой вычислительной сложности" TextWrapping="Wrap" Margin="10,0,0,10"/>
 
-                        <TextBlock Text="Разработчик: [Ваше имя/группа]" FontStyle="Italic" Foreground="Gray" Margin="0,10,0,0"/>
+                        <TextBlock Text="Разработчик: Группа 3 Б.ПИН.ИИ.24.16" FontStyle="Italic" Foreground="Gray" Margin="0,10,0,0"/>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>

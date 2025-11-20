@@ -155,13 +155,10 @@ namespace LogicTool.UI.ViewModels
         /// <summary>
         /// Текст с итогом сравнения.
         /// </summary>
-        /// <summary>
-        /// Текст с итогом сравнения.
-        /// </summary>
         public string ComparisonSummary
         {
             get => _comparisonSummary;
-            private set => SetField(ref _comparisonSummary, value);
+            set => SetField(ref _comparisonSummary, value);
         }
 
         /// <summary>
@@ -170,7 +167,7 @@ namespace LogicTool.UI.ViewModels
         public string StatusDetail
         {
             get => _statusDetail;
-            private set => SetField(ref _statusDetail, value);
+            set => SetField(ref _statusDetail, value);
         }
 
         /// <summary>
@@ -179,7 +176,7 @@ namespace LogicTool.UI.ViewModels
         public string CounterExample
         {
             get => _counterExample;
-            private set
+            set
             {
                 if (SetField(ref _counterExample, value))
                 {

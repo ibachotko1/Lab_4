@@ -2,10 +2,13 @@ using LogicTool.Business.Interfaces;
 using LogicTool.Core.Models;
 using LogicTool.UI.Commands;
 using LogicTool.UI.Services;
+using LogicTool.UI.ViewModels;
 using System;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace LogicTool.UI.ViewModels
 {
@@ -87,7 +90,7 @@ namespace LogicTool.UI.ViewModels
         public string BinaryRepresentation
         {
             get => _binaryRepresentation;
-            private set => SetField(ref _binaryRepresentation, value);
+            set => SetField(ref _binaryRepresentation, value);
         }
 
         /// <summary>
@@ -96,7 +99,7 @@ namespace LogicTool.UI.ViewModels
         public string BinaryExplanation
         {
             get => _binaryExplanation;
-            private set
+            set
             {
                 if (SetField(ref _binaryExplanation, value))
                 {
@@ -116,7 +119,7 @@ namespace LogicTool.UI.ViewModels
         public string ComplexityWarning
         {
             get => _complexityWarning;
-            private set
+            set
             {
                 if (SetField(ref _complexityWarning, value))
                 {
@@ -136,7 +139,7 @@ namespace LogicTool.UI.ViewModels
         public string ResultTitle
         {
             get => _resultTitle;
-            private set => SetField(ref _resultTitle, value);
+            set => SetField(ref _resultTitle, value);
         }
 
         /// <summary>
@@ -145,7 +148,7 @@ namespace LogicTool.UI.ViewModels
         public string ResultText
         {
             get => _resultText;
-            private set
+            set
             {
                 if (SetField(ref _resultText, value))
                 {
@@ -160,7 +163,7 @@ namespace LogicTool.UI.ViewModels
         public string MetricsSummary
         {
             get => _metricsSummary;
-            private set => SetField(ref _metricsSummary, value);
+            set => SetField(ref _metricsSummary, value);
         }
 
         /// <summary>

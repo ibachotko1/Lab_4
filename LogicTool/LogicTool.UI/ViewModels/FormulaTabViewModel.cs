@@ -59,7 +59,7 @@ namespace LogicTool.UI.ViewModels
         public string ResultTitle
         {
             get => _resultTitle;
-            private set => SetField(ref _resultTitle, value);
+            set => SetField(ref _resultTitle, value);
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace LogicTool.UI.ViewModels
         public string ResultText
         {
             get => _resultText;
-            private set
+            set
             {
                 if (SetField(ref _resultText, value))
                 {
@@ -83,7 +83,7 @@ namespace LogicTool.UI.ViewModels
         public string StatusText
         {
             get => _statusText;
-            private set => SetField(ref _statusText, value);
+            set => SetField(ref _statusText, value);
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace LogicTool.UI.ViewModels
         public Brush StatusBrush
         {
             get => _statusBrush;
-            private set => SetField(ref _statusBrush, value);
+            set => SetField(ref _statusBrush, value);
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace LogicTool.UI.ViewModels
         public string ComplexityWarning
         {
             get => _complexityWarning;
-            private set
+            set
             {
                 if (SetField(ref _complexityWarning, value))
                 {
@@ -121,7 +121,7 @@ namespace LogicTool.UI.ViewModels
         public string MetricsSummary
         {
             get => _metricsSummary;
-            private set => SetField(ref _metricsSummary, value);
+            set => SetField(ref _metricsSummary, value);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace LogicTool.UI.ViewModels
         public string BasisText
         {
             get => _basisText;
-            private set
+            set
             {
                 if (SetField(ref _basisText, value))
                 {
@@ -150,7 +150,7 @@ namespace LogicTool.UI.ViewModels
         public string PipelineText
         {
             get => _pipelineText;
-            private set
+            set
             {
                 if (SetField(ref _pipelineText, value))
                 {

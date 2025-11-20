@@ -97,3 +97,5 @@ C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.UI\obj\Debug\LogicTool.
 C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.UI\obj\Debug\LogicToo.08F9C284.Up2Date
 C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.UI\obj\Debug\LogicTool.UI.exe
 C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.UI\obj\Debug\LogicTool.UI.pdb
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.UI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.UI\obj\Debug\LogicTool.UI_MarkupCompile.lref

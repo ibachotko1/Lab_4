@@ -12,3 +12,9 @@ C:\Users\user\Desktop\Lab4\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.csp
 C:\Users\user\Desktop\Lab4\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.csproj.CoreCompileInputs.cache
 C:\Users\user\Desktop\Lab4\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.dll
 C:\Users\user\Desktop\Lab4\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.pdb
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.Core\bin\Debug\LogicTool.Core.dll
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.Core\bin\Debug\LogicTool.Core.pdb
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.csproj.AssemblyReference.cache
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.dll
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.Core\obj\Debug\LogicTool.Core.pdb

@@ -10,6 +10,8 @@ namespace LogicTool.UI.Converters
     /// </summary>
     public class EnumToBooleanConverter : IValueConverter
     {
+        public static EnumToBooleanConverter Default { get; } = new EnumToBooleanConverter();
+
         /// <inheritdoc/>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -40,4 +42,3 @@ namespace LogicTool.UI.Converters
         }
     }
 }
-
