@@ -3,258 +3,211 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:converters="clr-namespace:LogicTool.UI.Converters"
         mc:Ignorable="d"
-        Title="Логические функции — ЛР-4"
-        Height="750"
-        Width="1150"
-        Background="#F4F6FB"
+        Title="Логические функции — ЛР-4" Height="720" Width="1080"
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
-        <BooleanToVisibilityConverter x:Key="BoolToVisibility"/>
-        <converters:StringToVisibilityConverter x:Key="StringToVisibility"/>
-        <converters:EnumToBooleanConverter x:Key="EnumToBoolean"/>
+        <!-- Конвертеры -->
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
 
+        <!-- Стили -->
         <Style TargetType="Button">
-            <Setter Property="Margin" Value="5,0"/>
-            <Setter Property="Padding" Value="10,5"/>
-            <Setter Property="Background" Value="#4C7DFF"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="BorderBrush" Value="#3E63CC"/>
+            <Setter Property="Margin" Value="5,2"/>
+            <Setter Property="Padding" Value="8,4"/>
             <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Background" Value="#E0E0E0"/>
+            <Setter Property="BorderBrush" Value="#B0B0B0"/>
             <Setter Property="Cursor" Value="Hand"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#D0D0D0"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
         <Style TargetType="TextBox">
-            <Setter Property="Margin" Value="5,0"/>
-            <Setter Property="Padding" Value="6"/>
+            <Setter Property="Margin" Value="5,2"/>
+            <Setter Property="Padding" Value="5"/>
             <Setter Property="FontSize" Value="13"/>
-        </Style>
-
-        <Style x:Key="CardStyle" TargetType="Border">
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="CornerRadius" Value="10"/>
-            <Setter Property="Padding" Value="16"/>
-            <Setter Property="Margin" Value="0,0,0,15"/>
-            <Setter Property="Effect">
-                <Setter.Value>
-                    <DropShadowEffect BlurRadius="10" ShadowDepth="1" Opacity="0.08"/>
-                </Setter.Value>
-            </Setter>
         </Style>
     </Window.Resources>
 
-    <Grid Margin="18">
+    <Grid Margin="15">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Логические функции — ЛР-4"
-                   FontSize="22"
-                   FontWeight="SemiBold"
-                   Foreground="#1F2937"
-                   Margin="5,0,0,15"/>
-
-        <TabControl Grid.Row="1">
-            <!-- По номеру -->
-            <TabItem Header="📌 По номеру" DataContext="{Binding NumberTab}">
+        <!-- Вкладки -->
+        <TabControl Grid.Row="0" Grid.RowSpan="2">
+            <!-- Вкладка: По номеру -->
+            <TabItem Header="По номеру">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <StackPanel Margin="5">
-                        <Border Style="{StaticResource CardStyle}">
-                            <StackPanel>
-                                <TextBlock Text="Функция по номеру" FontSize="15" FontWeight="SemiBold"/>
-                                <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                                    <TextBlock Text="n:" VerticalAlignment="Center"/>
-                                    <TextBox Width="60" Text="{Binding VariableCount, UpdateSourceTrigger=PropertyChanged}"/>
-                                    <TextBlock Text="num:" VerticalAlignment="Center" Margin="15,0,0,0"/>
-                                    <TextBox Width="140" Text="{Binding FunctionNumber, UpdateSourceTrigger=PropertyChanged}"/>
-                                    <Button Content="Вычислить" Command="{Binding GenerateCommand}" Margin="15,0,0,0"/>
-                                    <Button Content="Пресет n=3, num=11" Command="{Binding PresetCommand}"/>
-                                </StackPanel>
-                                <TextBlock Text="{Binding BinaryRepresentation, Mode=OneWay}"
-                                           Margin="0,12,0,0"
-                                           FontWeight="Bold"
-                                           Foreground="#111827"/>
-                                <TextBlock Text="{Binding Legend}" Foreground="Gray" Margin="0,6,0,0"/>
-                                <TextBlock Text="{Binding ComplexityWarning}"
-                                           Foreground="#D14343"
-                                           FontWeight="Bold"
-                                           Margin="0,10,0,0"
-                                           Visibility="{Binding HasComplexityWarning, Converter={StaticResource BoolToVisibility}}"/>
-                                <TextBox Text="{Binding BinaryExplanation, Mode=OneWay}"
-                                         Visibility="{Binding HasBinaryExplanation, Converter={StaticResource BoolToVisibility}}"
-                                         Margin="0,12,0,0"
-                                         IsReadOnly="True"
-                                         AcceptsReturn="True"
-                                         VerticalScrollBarVisibility="Auto"
-                                         Height="140"/>
-                            </StackPanel>
-                        </Border>
+                    <StackPanel Margin="10">
+                        <!-- Ввод -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Количество переменных:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                            <TextBox Width="50" Text="{Binding VariableCount, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                            <TextBlock Text="Номер функции:" VerticalAlignment="Center" Margin="15,0,5,0"/>
+                            <TextBox Width="100" Text="{Binding FunctionNumber, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                            <Button Content="Вычислить" Command="{Binding GenerateCommand}" Margin="10,0"/>
+                            <Button Content="Пресет: n=3, num=11" Command="{Binding Preset1Command}" Margin="10,0"/>
+                        </StackPanel>
 
-                        <Border Style="{StaticResource CardStyle}">
-                            <StackPanel>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                    <Button Content="Таблица" Command="{Binding ShowTruthTableCommand}"/>
-                                    <Button Content="DNF" Command="{Binding ShowDnfCommand}"/>
-                                    <Button Content="KNF" Command="{Binding ShowKnfCommand}"/>
-                                </StackPanel>
-                                <TextBlock Text="{Binding ResultTitle}" FontWeight="SemiBold" FontSize="15" Margin="0,12,0,6"/>
-                                <TextBox Text="{Binding ResultText, Mode=OneWay}"
-                                         IsReadOnly="True"
-                                         AcceptsReturn="True"
-                                         Height="250"
-                                         VerticalScrollBarVisibility="Auto"/>
-                                <StackPanel Orientation="Horizontal" Margin="0,10,0,0" VerticalAlignment="Center">
-                                    <TextBlock Text="{Binding MetricsSummary}" FontStyle="Italic" Foreground="#374151"/>
-                                    <Button Content="Копировать" Command="{Binding CopyCommand}" Margin="15,0,0,0"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Border>
+                        <!-- Бинарное представление -->
+                        <TextBlock Text="{Binding BinaryRepresentation}" FontWeight="Bold" Margin="0,0,0,10"/>
+
+                        <!-- Предупреждение -->
+                        <TextBlock Text="{Binding ComplexityWarning}" Foreground="Red" FontWeight="Bold" 
+                                   Visibility="{Binding ComplexityWarning, Converter={StaticResource BoolToVis}}" Margin="0,0,0,10"/>
+
+                        <!-- Кнопки -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <Button Content="Таблица истинности" Command="{Binding ShowTruthTableCommand}"/>
+                            <Button Content="DNF" Command="{Binding ShowDNFCommand}"/>
+                            <Button Content="KNF" Command="{Binding ShowKNFCommand}"/>
+                        </StackPanel>
+
+                        <!-- Результат -->
+                        <TextBlock Text="Результат:" FontWeight="Bold" Margin="0,0,0,5"/>
+                        <TextBox Text="{Binding ResultText}" IsReadOnly="True" AcceptsReturn="True" Height="200"
+                                 VerticalScrollBarVisibility="Auto"/>
+                        <Button Content="Копировать в буфер" Command="{Binding CopyResultCommand}" HorizontalAlignment="Left" Margin="0,10,0,0"/>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
 
-            <!-- По формуле -->
-            <TabItem Header="✍️ По формуле" DataContext="{Binding FormulaTab}">
+            <!-- Вкладка: По формуле -->
+            <TabItem Header="По формуле">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <StackPanel Margin="5">
-                        <Border Style="{StaticResource CardStyle}">
-                            <StackPanel>
-                                <TextBlock Text="Формула" FontSize="15" FontWeight="SemiBold"/>
-                                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                                    <TextBox Width="400" Text="{Binding Formula, UpdateSourceTrigger=PropertyChanged}"/>
-                                    <Button Content="Разобрать и вычислить" Command="{Binding ParseCommand}" Margin="12,0,0,0"/>
-                                    <Button Content="Пресет (x1 | x2) -> x3" Command="{Binding PresetCommand}"/>
-                                </StackPanel>
-                                <TextBlock Text="{Binding Legend}" Foreground="Gray" Margin="0,6,0,0"/>
-                                <TextBlock Text="{Binding StatusText}" Foreground="{Binding StatusBrush}" FontWeight="SemiBold" Margin="0,10,0,0"/>
-                                <TextBlock Text="{Binding ComplexityWarning}"
-                                           Foreground="#D14343"
-                                           FontWeight="Bold"
-                                           Visibility="{Binding HasComplexityWarning, Converter={StaticResource BoolToVisibility}}"
-                                           Margin="0,6,0,0"/>
-                            </StackPanel>
-                        </Border>
+                    <StackPanel Margin="10">
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Формула:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                            <TextBox Width="300" Text="{Binding Formula, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                            <Button Content="Вычислить" Command="{Binding ParseCommand}" Margin="10,0"/>
+                            <Button Content="Пресет: (x1 | x2) -> x3" Command="{Binding Preset2Command}" Margin="10,0"/>
+                        </StackPanel>
 
-                        <Border Style="{StaticResource CardStyle}">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="10"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <StackPanel Grid.Column="0">
-                                    <TextBlock Text="Формула в базисе {¬, ∧, ∨}" FontWeight="SemiBold"/>
-                                    <TextBox Text="{Binding BasisText, Mode=OneWay}"
-                                             Height="140"
-                                             Margin="0,8,0,0"
-                                             AcceptsReturn="True"
-                                             IsReadOnly="True"
-                                             VerticalScrollBarVisibility="Auto"/>
-                                </StackPanel>
-                                <StackPanel Grid.Column="2">
-                                    <TextBlock Text="Лексер → ОПЗ" FontWeight="SemiBold"/>
-                                    <TextBox Text="{Binding PipelineText, Mode=OneWay}"
-                                             Height="140"
-                                             Margin="0,8,0,0"
-                                             AcceptsReturn="True"
-                                             IsReadOnly="True"
-                                             VerticalScrollBarVisibility="Auto"/>
-                                </StackPanel>
-                            </Grid>
-                        </Border>
+                        <TextBlock Text="-/! - НЕ, ∧/&amp; - И, ∨/| - ИЛИ, ^ - XOR, -> - импликация, => - эквивалентность" 
+                                    FontStyle="Italic" Foreground="Gray" Margin="0,0,0,10"/>
+                        <TextBlock Text="{Binding Status}" FontWeight="Bold" Foreground="{Binding StatusColor}" Margin="0,0,0,10"/>
 
-                        <Border Style="{StaticResource CardStyle}">
-                            <StackPanel>
-                                <TextBlock Text="{Binding ResultTitle}" FontWeight="SemiBold" FontSize="15"/>
-                                <TextBox Text="{Binding ResultText, Mode=OneWay}"
-                                         IsReadOnly="True"
-                                         AcceptsReturn="True"
-                                         Height="320"
-                                         Margin="0,8,0,0"
-                                         VerticalScrollBarVisibility="Auto"/>
-                                <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
-                                    <TextBlock Text="{Binding MetricsSummary}" FontStyle="Italic" Foreground="#374151"/>
-                                    <Button Content="Копировать" Command="{Binding CopyCommand}" Margin="15,0,0,0"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Border>
+                        <TextBlock Text="{Binding ComplexityWarning}" Foreground="Red" FontWeight="Bold" 
+                                   Visibility="{Binding ComplexityWarning, Converter={StaticResource BoolToVis}}" Margin="0,0,0,10"/>
+
+                        <TextBlock Text="Результат:" FontWeight="Bold" Margin="0,0,0,5"/>
+                        <TextBox Text="{Binding ResultText}" IsReadOnly="True" AcceptsReturn="True" Height="200"
+                                 VerticalScrollBarVisibility="Auto"/>
+                        <Button Content="Копировать в буфер" Command="{Binding CopyResultCommand}" HorizontalAlignment="Left" Margin="0,10,0,0"/>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
 
-            <!-- Сравнение -->
-            <TabItem Header="⚖️ Сравнение" DataContext="{Binding ComparisonTab}">
+            <!-- Вкладка: Сравнение -->
+            <TabItem Header="Сравнение">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <StackPanel Margin="5">
-                        <Border Style="{StaticResource CardStyle}">
-                            <StackPanel>
-                                <TextBlock Text="Функция 1" FontSize="15" FontWeight="SemiBold"/>
-                                <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
-                                    <RadioButton Content="Формула"
-                                                 GroupName="Mode1"
-                                                 IsChecked="{Binding FirstKind, Converter={StaticResource EnumToBoolean}, ConverterParameter=Formula}"
-                                                 Margin="0,0,10,0"/>
-                                    <RadioButton Content="Номер"
-                                                 GroupName="Mode1"
-                                                 IsChecked="{Binding FirstKind, Converter={StaticResource EnumToBoolean}, ConverterParameter=Number}"/>
-                                </StackPanel>
-                                <TextBox Text="{Binding Formula1}" Margin="0,8,0,0"
-                                         Visibility="{Binding ShowFormula1, Converter={StaticResource BoolToVisibility}}"/>
-                                <StackPanel Orientation="Horizontal"
-                                            Visibility="{Binding ShowNumber1, Converter={StaticResource BoolToVisibility}}"
-                                            Margin="0,8,0,0">
-                                    <TextBlock Text="n:" VerticalAlignment="Center"/>
-                                    <TextBox Width="60" Text="{Binding VarCount1}"/>
-                                    <TextBlock Text="num:" Margin="15,0,0,0" VerticalAlignment="Center"/>
-                                    <TextBox Width="100" Text="{Binding Number1}"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Border>
+                    <StackPanel Margin="10">
+                        <!-- Функция 1 -->
+                        <TextBlock Text="Функция 1:" FontWeight="Bold" Margin="0,0,0,5"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <RadioButton Content="Формула" IsChecked="{Binding IsFormula1}" Margin="0,0,10,0"/>
+                            <RadioButton Content="Номер" IsChecked="{Binding IsNumber1}" Margin="0,0,10,0"/>
+                        </StackPanel>
 
-                        <Border Style="{StaticResource CardStyle}">
-                            <StackPanel>
-                                <TextBlock Text="Функция 2" FontSize="15" FontWeight="SemiBold"/>
-                                <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
-                                    <RadioButton Content="Формула"
-                                                 GroupName="Mode2"
-                                                 IsChecked="{Binding SecondKind, Converter={StaticResource EnumToBoolean}, ConverterParameter=Formula}"
-                                                 Margin="0,0,10,0"/>
-                                    <RadioButton Content="Номер"
-                                                 GroupName="Mode2"
-                                                 IsChecked="{Binding SecondKind, Converter={StaticResource EnumToBoolean}, ConverterParameter=Number}"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <Border Visibility="{Binding IsFormula1, Converter={StaticResource BoolToVis}}">
+                                <TextBox Width="250" Text="{Binding Formula1}"/>
+                            </Border>
+                            <Border Visibility="{Binding IsNumber1, Converter={StaticResource BoolToVis}}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="n:" Margin="0,0,5,0"/>
+                                    <TextBox Width="40" Text="{Binding VarCount1}"/>
+                                    <TextBlock Text="num:" Margin="10,0,5,0"/>
+                                    <TextBox Width="60" Text="{Binding Number1}"/>
                                 </StackPanel>
-                                <TextBox Text="{Binding Formula2}" Margin="0,8,0,0"
-                                         Visibility="{Binding ShowFormula2, Converter={StaticResource BoolToVisibility}}"/>
-                                <StackPanel Orientation="Horizontal"
-                                            Visibility="{Binding ShowNumber2, Converter={StaticResource BoolToVisibility}}"
-                                            Margin="0,8,0,0">
-                                    <TextBlock Text="n:" VerticalAlignment="Center"/>
-                                    <TextBox Width="60" Text="{Binding VarCount2}"/>
-                                    <TextBlock Text="num:" Margin="15,0,0,0" VerticalAlignment="Center"/>
-                                    <TextBox Width="100" Text="{Binding Number2}"/>
-                                </StackPanel>
-                                <TextBlock Text="{Binding Legend}" Foreground="Gray" Margin="0,10,0,0"/>
-                                <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                                    <Button Content="Сравнить" Command="{Binding CompareCommand}"/>
-                                    <Button Content="Пресет эквивалентности" Command="{Binding PresetCommand}"/>
-                                </StackPanel>
-                            </StackPanel>
-                        </Border>
+                            </Border>
+                        </StackPanel>
 
-                        <Border Style="{StaticResource CardStyle}">
-                            <StackPanel>
-                                <TextBlock Text="{Binding ComparisonSummary}" FontWeight="SemiBold" FontSize="15"/>
-                                <TextBlock Text="{Binding StatusDetail}" Margin="0,6,0,0"/>
-                                <TextBlock Text="{Binding CounterExample}"
-                                           Foreground="#D14343"
-                                           FontWeight="SemiBold"
-                                           Margin="0,6,0,0"
-                                           Visibility="{Binding HasCounterExample, Converter={StaticResource BoolToVisibility}}"/>
-                            </StackPanel>
-                        </Border>
+                        <!-- Функция 2 -->
+                        <TextBlock Text="Функция 2:" FontWeight="Bold" Margin="0,20,0,5"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <RadioButton Content="Формула" IsChecked="{Binding IsFormula2}" Margin="0,0,10,0"/>
+                            <RadioButton Content="Номер" IsChecked="{Binding IsNumber2}" Margin="0,0,10,0"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <Border Visibility="{Binding IsFormula2, Converter={StaticResource BoolToVis}}">
+                                <TextBox Width="250" Text="{Binding Formula2}"/>
+                            </Border>
+                            <Border Visibility="{Binding IsNumber2, Converter={StaticResource BoolToVis}}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="n:" Margin="0,0,5,0"/>
+                                    <TextBox Width="40" Text="{Binding VarCount2}"/>
+                                    <TextBlock Text="num:" Margin="10,0,5,0"/>
+                                    <TextBox Width="60" Text="{Binding Number2}"/>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+
+                        <Button Content="Сравнить" Command="{Binding CompareCommand}" Margin="0,10,0,0"/>
+                        <Button Content="Пресет: эквивалентность DNF" Command="{Binding Preset3Command}" Margin="10,10,0,0"/>
+
+                        <TextBlock Text="{Binding ComparisonResult}" FontWeight="Bold" Margin="0,15,0,5"/>
+                        <TextBlock Text="{Binding CounterExample}" Foreground="Red" Visibility="{Binding HasCounterExample, Converter={StaticResource BoolToVis}}"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <!-- Вкладка: Справка -->
+            <TabItem Header="Справка">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="15">
+                        <TextBlock Text="Лабораторная работа №4: Логические функции" FontSize="16" FontWeight="Bold" Margin="0,0,0,15"/>
+
+                        <TextBlock Text="Описание программы:" FontWeight="Bold" FontSize="14" Margin="0,0,0,5"/>
+                        <TextBlock Text="Данная программа предназначена для работы с булевыми функциями: генерации по номеру, анализа по формуле и сравнения функций." 
+                                   TextWrapping="Wrap" Margin="0,0,0,15"/>
+
+                        <TextBlock Text="Вкладка 'По номеру':" FontWeight="Bold" FontSize="13" Margin="0,0,0,5"/>
+                        <TextBlock Text="• Введите количество переменных (n) и номер функции" TextWrapping="Wrap" Margin="10,0,0,2"/>
+                        <TextBlock Text="• Программа покажет битовое представление функции" TextWrapping="Wrap" Margin="10,0,0,2"/>
+                        <TextBlock Text="• Можно получить таблицу истинности, ДНФ и КНФ" TextWrapping="Wrap" Margin="10,0,0,10"/>
+
+                        <TextBlock Text="Вкладка 'По формуле':" FontWeight="Bold" FontSize="13" Margin="0,0,0,5"/>
+                        <TextBlock Text="• Введите логическую формулу используя поддерживаемые операторы" TextWrapping="Wrap" Margin="10,0,0,2"/>
+                        <TextBlock Text="• Поддерживаемые операторы: НЕ (!/-), И (&amp;/∧), ИЛИ (|/∨), XOR (^), импликация (-&gt;), эквивалентность (=)" TextWrapping="Wrap" Margin="10,0,0,10"/>
+
+                        <TextBlock Text="Вкладка 'Сравнение':" FontWeight="Bold" FontSize="13" Margin="0,0,0,5"/>
+                        <TextBlock Text="• Сравните две функции заданные формулой или номером" TextWrapping="Wrap" Margin="10,0,0,2"/>
+                        <TextBlock Text="• Программа определит эквивалентность функций" TextWrapping="Wrap" Margin="10,0,0,2"/>
+                        <TextBlock Text="• При неэквивалентности будет показан контрпример" TextWrapping="Wrap" Margin="10,0,0,10"/>
+
+                        <TextBlock Text="Поддерживаемые операторы:" FontWeight="Bold" FontSize="13" Margin="0,0,0,5"/>
+                        <StackPanel Margin="10,0,0,10">
+                            <TextBlock Text="• НЕ: !x1, -x1" Margin="0,1,0,1"/>
+                            <TextBlock Text="• И: x1 &amp; x2, x1 ∧ x2" Margin="0,1,0,1"/>
+                            <TextBlock Text="• ИЛИ: x1 | x2, x1 ∨ x2" Margin="0,1,0,1"/>
+                            <TextBlock Text="• XOR: x1 ^ x2" Margin="0,1,0,1"/>
+                            <TextBlock Text="• Импликация: x1 -&gt; x2" Margin="0,1,0,1"/>
+                            <TextBlock Text="• Эквивалентность: x1 =&gt; x2" Margin="0,1,0,1"/>
+                        </StackPanel>
+
+                        <TextBlock Text="Примеры формул:" FontWeight="Bold" FontSize="13" Margin="0,0,0,5"/>
+                        <StackPanel Margin="10,0,0,10">
+                            <TextBlock Text="• (x1 | x2) -&gt; x3" Margin="0,1,0,1"/>
+                            <TextBlock Text="• x1 &amp; !x2 | x3" Margin="0,1,0,1"/>
+                            <TextBlock Text="• (x1 ^ x2) =&gt; x3" Margin="0,1,0,1"/>
+                            <TextBlock Text="• !(x1 &amp; x2) | x3" Margin="0,1,0,1"/>
+                        </StackPanel>
+
+                        <TextBlock Text="Примечания:" FontWeight="Bold" FontSize="13" Margin="0,0,0,5"/>
+                        <TextBlock Text="• Используйте круглые скобки для задания приоритета операций" TextWrapping="Wrap" Margin="10,0,0,2"/>
+                        <TextBlock Text="• Переменные должны быть в формате x1, x2, x3, ..." TextWrapping="Wrap" Margin="10,0,0,2"/>
+                        <TextBlock Text="• При большом количестве переменных вычисления могут занять время" TextWrapping="Wrap" Margin="10,0,0,2"/>
+                        <TextBlock Text="• Программа предупредит о высокой вычислительной сложности" TextWrapping="Wrap" Margin="10,0,0,10"/>
+
+                        <TextBlock Text="Разработчик: [Ваше имя/группа]" FontStyle="Italic" Foreground="Gray" Margin="0,10,0,0"/>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>

@@ -25,3 +25,12 @@ C:\Users\user\Desktop\Lab4\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Busi
 C:\Users\user\Desktop\Lab4\LogicTool\LogicTool.Business\obj\Debug\LogicToo.65E5E7AC.Up2Date
 C:\Users\user\Desktop\Lab4\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.dll
 C:\Users\user\Desktop\Lab4\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.pdb
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.Business\bin\Debug\LogicTool.Business.dll
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.Business\bin\Debug\LogicTool.Business.pdb
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.Business\bin\Debug\LogicTool.Core.dll
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.Business\bin\Debug\LogicTool.Core.pdb
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.csproj.AssemblyReference.cache
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.Business\obj\Debug\LogicToo.65E5E7AC.Up2Date
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.dll
+C:\Users\user\Documents\GitHub\Lab_4\LogicTool\LogicTool.Business\obj\Debug\LogicTool.Business.pdb
