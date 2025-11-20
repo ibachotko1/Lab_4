@@ -21,12 +21,42 @@ namespace LogicTool.Core.Services
         public static readonly Dictionary<string, (int precedence, OperatorType type)> Operators =
             new Dictionary<string, (int precedence, OperatorType type)>
         {
-            { "¬", (4, OperatorType.Unary) }, { "!", (4, OperatorType.Unary) },
-            { "∧", (3, OperatorType.Binary) }, { "&", (3, OperatorType.Binary) },
-            { "∨", (2, OperatorType.Binary) }, { "|", (2, OperatorType.Binary) },
+            { "¬", (4, OperatorType.Unary) },
+            { "∧", (3, OperatorType.Binary) },
+            { "∨", (2, OperatorType.Binary) },
             { "^", (2, OperatorType.Binary) },
-            { "→", (1, OperatorType.Binary) }, { "->", (1, OperatorType.Binary) },
-            { "↔", (1, OperatorType.Binary) }, { "=", (1, OperatorType.Binary) }
+            { "→", (1, OperatorType.Binary) },
+            { "↔", (1, OperatorType.Binary) }
+        };
+
+        private static readonly Dictionary<string, string> TwoCharOperatorMap =
+            new Dictionary<string, string>
+        {
+            { "->", "→" },
+            { "=>", "↔" }
+        };
+
+        private static readonly Dictionary<string, string> SingleCharOperatorMap =
+            new Dictionary<string, string>
+        {
+            { "!", "¬" },
+            { "&", "∧" },
+            { "|", "∨" },
+            { "=", "↔" }
+        };
+
+        private static readonly Dictionary<string, string> KeywordOperatorMap =
+            new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "not", "¬" },
+            { "and", "∧" },
+            { "or", "∨" },
+            { "xor", "^" },
+            { "impl", "→" },
+            { "then", "→" },
+            { "equ", "↔" },
+            { "eq", "↔" },
+            { "iff", "↔" }
         };
 
         /// <summary>
@@ -70,21 +100,21 @@ namespace LogicTool.Core.Services
                     // Не буквенно-цифровой символ - разделитель
                     FlushBuffer(buffer, tokens);
 
-                    // Проверяем многосимвольные операторы (например, "->")
                     if (i < formula.Length - 1)
                     {
                         string twoCharOp = formula.Substring(i, 2);
-                        if (Operators.ContainsKey(twoCharOp) || twoCharOp == "->")
+                        if (TwoCharOperatorMap.TryGetValue(twoCharOp, out var mappedTwoChar))
                         {
-                            // Для "->" заменяем на "→" для единообразия
-                            tokens.Add(twoCharOp == "->" ? "→" : twoCharOp);
-                            i++; // Пропускаем второй символ
+                            tokens.Add(mappedTwoChar);
+                            i++;
                             continue;
                         }
                     }
 
-                    // Одиночный символ
-                    tokens.Add(c.ToString());
+                    string symbol = c.ToString();
+                    tokens.Add(SingleCharOperatorMap.TryGetValue(symbol, out var mappedSingle)
+                        ? mappedSingle
+                        : symbol);
                 }
             }
 
@@ -227,6 +257,108 @@ namespace LogicTool.Core.Services
             return stack.Pop();
         }
 
+        private ExpressionNode BuildExpressionTree(List<string> rpn)
+        {
+            var stack = new Stack<ExpressionNode>();
+
+            foreach (var token in rpn)
+            {
+                if (IsVariable(token))
+                {
+                    stack.Push(new VariableNode(token));
+                }
+                else if (token == "0" || token == "1")
+                {
+                    stack.Push(new ConstantNode(token == "1"));
+                }
+                else if (Operators.TryGetValue(token, out var meta))
+                {
+                    if (meta.type == OperatorType.Unary)
+                    {
+                        if (stack.Count < 1)
+                        {
+                            throw new FormulaParseException("Недостаточно операндов для унарного оператора.");
+                        }
+                        var operand = stack.Pop();
+                        stack.Push(new UnaryNode(operand));
+                    }
+                    else
+                    {
+                        if (stack.Count < 2)
+                        {
+                            throw new FormulaParseException("Недостаточно операндов для бинарного оператора.");
+                        }
+                        var right = stack.Pop();
+                        var left = stack.Pop();
+                        stack.Push(new BinaryNode(token, left, right));
+                    }
+                }
+                else
+                {
+                    throw new FormulaParseException($"Неизвестный токен: {token}");
+                }
+            }
+
+            if (stack.Count != 1)
+            {
+                throw new FormulaParseException("Не удалось построить дерево выражения.");
+            }
+
+            return stack.Pop();
+        }
+
+        private ExpressionNode RewriteToBasic(ExpressionNode node)
+        {
+            switch (node)
+            {
+                case UnaryNode unary:
+                    return new UnaryNode(RewriteToBasic(unary.Operand));
+                case BinaryNode binary:
+                    var left = RewriteToBasic(binary.Left);
+                    var right = RewriteToBasic(binary.Right);
+                    switch (binary.Operator)
+                    {
+                        case "^":
+                            return new BinaryNode("∨",
+                                new BinaryNode("∧", left, Not(right)),
+                                new BinaryNode("∧", Not(left), right));
+                        case "→":
+                            return new BinaryNode("∨", Not(left), right);
+                        case "↔":
+                            return new BinaryNode("∨",
+                                new BinaryNode("∧", left, right),
+                                new BinaryNode("∧", Not(left), Not(right)));
+                        default:
+                            return new BinaryNode(binary.Operator, left, right);
+                    }
+                default:
+                    return node;
+            }
+        }
+
+        private static UnaryNode Not(ExpressionNode operand) => new UnaryNode(operand);
+
+        private string FormatExpression(ExpressionNode node)
+        {
+            switch (node)
+            {
+                case VariableNode variable:
+                    return variable.Name;
+                case ConstantNode constant:
+                    return constant.Value ? "1" : "0";
+                case UnaryNode unary:
+                    var operand = FormatExpression(unary.Operand);
+                    bool needBrackets = unary.Operand is BinaryNode;
+                    return $"¬{(needBrackets ? $"({operand})" : operand)}";
+                case BinaryNode binary:
+                    var left = FormatExpression(binary.Left);
+                    var right = FormatExpression(binary.Right);
+                    return $"({left} {binary.Operator} {right})";
+                default:
+                    throw new InvalidOperationException("Неизвестный тип узла выражения.");
+            }
+        }
+
         /// <summary>
         /// Выполняет лексический анализ с возвратом типизированных токенов.
         /// </summary>
@@ -260,10 +392,16 @@ namespace LogicTool.Core.Services
         /// </remarks>
         public string ToBasicBasis(string formula)
         {
-            // Этот метод требует более сложной реализации с построением AST
-            // Для простоты пока возвращаем исходную формулу
-            // Полная реализация потребовала бы построения дерева выражений и его преобразования
-            return formula;
+            if (string.IsNullOrWhiteSpace(formula))
+            {
+                throw new FormulaParseException("Формула не может быть пустой.");
+            }
+
+            var tokens = Tokenize(formula);
+            var rpn = ToRPN(tokens);
+            var tree = BuildExpressionTree(rpn);
+            var basicTree = RewriteToBasic(tree);
+            return FormatExpression(basicTree);
         }
 
         /// <summary>
@@ -278,7 +416,6 @@ namespace LogicTool.Core.Services
             switch (token)
             {
                 case "¬":
-                case "!":
                     // Унарное отрицание
                     if (stack.Count < 1)
                     {
@@ -287,7 +424,6 @@ namespace LogicTool.Core.Services
                     return !stack.Pop();
 
                 case "∧":
-                case "&":
                     // Логическое И (конъюнкция)
                     if (stack.Count < 2)
                     {
@@ -298,7 +434,6 @@ namespace LogicTool.Core.Services
                     return op1And && op2And;
 
                 case "∨":
-                case "|":
                     // Логическое ИЛИ (дизъюнкция)
                     if (stack.Count < 2)
                     {
@@ -400,7 +535,16 @@ namespace LogicTool.Core.Services
         {
             if (buffer.Length > 0)
             {
-                tokens.Add(buffer.ToString());
+                string token = buffer.ToString();
+                string lowered = token.ToLowerInvariant();
+                if (KeywordOperatorMap.TryGetValue(lowered, out var mapped))
+                {
+                    tokens.Add(mapped);
+                }
+                else
+                {
+                    tokens.Add(token);
+                }
                 buffer.Clear();
             }
         }
@@ -439,6 +583,40 @@ namespace LogicTool.Core.Services
             {
                 throw new FormulaParseException("Несбалансированные скобки: лишние закрывающие скобки.");
             }
+        }
+
+        private abstract class ExpressionNode { }
+
+        private sealed class VariableNode : ExpressionNode
+        {
+            public VariableNode(string name) => Name = name;
+            public string Name { get; }
+        }
+
+        private sealed class ConstantNode : ExpressionNode
+        {
+            public ConstantNode(bool value) => Value = value;
+            public bool Value { get; }
+        }
+
+        private sealed class UnaryNode : ExpressionNode
+        {
+            public UnaryNode(ExpressionNode operand) => Operand = operand;
+            public ExpressionNode Operand { get; }
+        }
+
+        private sealed class BinaryNode : ExpressionNode
+        {
+            public BinaryNode(string op, ExpressionNode left, ExpressionNode right)
+            {
+                Operator = op;
+                Left = left;
+                Right = right;
+            }
+
+            public string Operator { get; }
+            public ExpressionNode Left { get; }
+            public ExpressionNode Right { get; }
         }
     }
 }

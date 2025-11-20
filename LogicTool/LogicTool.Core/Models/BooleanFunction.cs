@@ -3,6 +3,7 @@ using LogicTool.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace LogicTool.Core.Models
 {
@@ -20,6 +21,11 @@ namespace LogicTool.Core.Models
         /// Таблица истинности функции
         /// </summary>
         public List<TruthTableRow> TruthTable { get; private set; }
+
+        /// <summary>
+        /// Порядок переменных в таблице
+        /// </summary>
+        public IReadOnlyList<string> VariableNames { get; private set; } = Array.Empty<string>();
 
         /// <summary>
         /// Дизъюнктивная нормальная форма (ДНФ)
@@ -82,6 +88,9 @@ namespace LogicTool.Core.Models
             FunctionNumber = functionNumber;
             OriginalFormula = string.Empty;
             Complexity = CalculateComplexityLevel(variableCount);
+            VariableNames = Enumerable.Range(1, variableCount)
+                .Select(i => $"x{i}")
+                .ToList();
 
             int rowCount = 1 << variableCount; // 2^variableCount
 
@@ -107,10 +116,11 @@ namespace LogicTool.Core.Models
 
             var variables = ExtractVariables(tokens);
             VariableCount = variables.Count;
+            VariableNames = variables;
             FunctionNumber = -1; // Не определен для функций по формуле
             Complexity = CalculateComplexityLevel(VariableCount);
 
-            GenerateTruthTableFromFormula(variables, rpn, parser);
+            GenerateTruthTableFromFormula(rpn, parser);
             GenerateNormalForms();
         }
 
@@ -131,7 +141,7 @@ namespace LogicTool.Core.Models
                 // Генерируем значения переменных для текущей строки
                 for (int j = 0; j < n; j++)
                 {
-                    string varName = $"x{j + 1}";
+                    string varName = VariableNames[j];
                     // Вычисляем значение переменной из битового представления номера строки
                     bool value = ((i >> (n - 1 - j)) & 1) == 1;
                     values[varName] = value;
@@ -150,10 +160,10 @@ namespace LogicTool.Core.Models
         /// <param name="variables">Список переменных</param>
         /// <param name="rpn">Обратная польская запись формулы</param>
         /// <param name="parser">Парсер формул</param>
-        private void GenerateTruthTableFromFormula(List<string> variables, List<string> rpn, FormulaParser parser)
+        private void GenerateTruthTableFromFormula(List<string> rpn, FormulaParser parser)
         {
             TruthTable = new List<TruthTableRow>();
-            int n = variables.Count;
+            int n = VariableNames.Count;
             int rowCount = 1 << n;
 
             for (int i = 0; i < rowCount; i++)
@@ -163,7 +173,7 @@ namespace LogicTool.Core.Models
                 // Устанавливаем значения переменных для текущей строки
                 for (int j = 0; j < n; j++)
                 {
-                    string varName = variables[j];
+                    string varName = VariableNames[j];
                     bool value = ((i >> (n - 1 - j)) & 1) == 1;
                     values[varName] = value;
                 }
@@ -202,10 +212,10 @@ namespace LogicTool.Core.Models
                 // Для каждой true-строки строим совершенную конъюнкцию
                 var literals = new List<string>();
 
-                foreach (var kvp in row.Values)
+                foreach (var variable in VariableNames)
                 {
-                    // Если переменная true - берем ее, если false - берем ее отрицание
-                    string literal = kvp.Value ? kvp.Key : $"¬{kvp.Key}";
+                    bool value = row.Values[variable];
+                    string literal = value ? variable : $"¬{variable}";
                     literals.Add(literal);
                 }
 
@@ -237,10 +247,10 @@ namespace LogicTool.Core.Models
                 // Для каждой false-строки строим совершенную дизъюнкцию
                 var literals = new List<string>();
 
-                foreach (var kvp in row.Values)
+                foreach (var variable in VariableNames)
                 {
-                    // Если переменная false - берем ее, если true - берем ее отрицание
-                    string literal = !kvp.Value ? kvp.Key : $"¬{kvp.Key}";
+                    bool value = row.Values[variable];
+                    string literal = !value ? variable : $"¬{variable}";
                     literals.Add(literal);
                 }
 
@@ -356,5 +366,32 @@ namespace LogicTool.Core.Models
                     return "Неизвестный уровень сложности";
             }
         }
+
+        /// <summary>
+        /// Возвращает текст с пояснением соответствия битов и строк таблицы истинности
+        /// </summary>
+        public string DescribeBinaryMapping()
+        {
+            if (TruthTable == null || TruthTable.Count == 0 || FunctionNumber < 0)
+            {
+                return string.Empty;
+            }
+
+            var sb = new StringBuilder();
+            string binary = Convert.ToString(FunctionNumber, 2).PadLeft(TruthTable.Count, '0');
+            sb.AppendLine($"Бинарный код функции ({TruthTable.Count} бит): {binary}");
+            sb.AppendLine("Строки читаются слева направо, в лексикографическом порядке переменных.");
+
+            for (int i = 0; i < TruthTable.Count; i++)
+            {
+                var row = TruthTable[i];
+                var tuple = string.Join(", ", VariableNames.Select(name => $"{name}={BoolToText(row.Values[name])}"));
+                sb.AppendLine($"{i + 1}. ({tuple}) → f = {BoolToText(row.Result)} ↔ бит {binary[i]}");
+            }
+
+            return sb.ToString();
+        }
+
+        private static string BoolToText(bool value) => value ? "1" : "0";
     }
 }
