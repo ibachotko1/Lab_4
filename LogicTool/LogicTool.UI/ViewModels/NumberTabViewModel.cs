@@ -22,7 +22,7 @@ namespace LogicTool.UI.ViewModels
 
         private BooleanFunction _currentFunction;
         private int _variableCount = 3;
-        private long _functionNumber = 11;
+        private long _functionNumber = 5; // Изменил с 11 на 5 для 3 переменных
         private string _binaryRepresentation = string.Empty;
         private string _binaryExplanation = string.Empty;
         private string _complexityWarning = string.Empty;
@@ -60,6 +60,8 @@ namespace LogicTool.UI.ViewModels
                 if (SetField(ref _variableCount, clamped))
                 {
                     UpdateBinaryHints();
+                    // Автоматически корректируем номер функции при изменении количества переменных
+                    AdjustFunctionNumber();
                 }
             }
         }
@@ -72,12 +74,10 @@ namespace LogicTool.UI.ViewModels
             get => _functionNumber;
             set
             {
-                if (value < 0)
-                {
-                    value = 0;
-                }
+                long maxNumber = (1L << (1 << VariableCount)) - 1;
+                long clamped = Math.Max(0, Math.Min(maxNumber, value));
 
-                if (SetField(ref _functionNumber, value))
+                if (SetField(ref _functionNumber, clamped))
                 {
                     UpdateBinaryHints();
                 }
@@ -197,7 +197,7 @@ namespace LogicTool.UI.ViewModels
         public RelayCommand CopyCommand { get; }
 
         /// <summary>
-        /// Команда применения пресета n=3, num=11.
+        /// Команда применения пресета n=3, num=5.
         /// </summary>
         public RelayCommand PresetCommand { get; }
 
@@ -207,8 +207,22 @@ namespace LogicTool.UI.ViewModels
         public void ApplyPreset()
         {
             VariableCount = 3;
-            FunctionNumber = 11;
+            FunctionNumber = 5; // Для 3 переменных: 2^3 = 8 строк, диапазон [0, 255]
             _ = GenerateAsync();
+        }
+
+        /// <summary>
+        /// Корректирует номер функции при изменении количества переменных.
+        /// </summary>
+        private void AdjustFunctionNumber()
+        {
+            long maxNumber = (1L << (1 << VariableCount)) - 1;
+            if (_functionNumber > maxNumber)
+            {
+                _functionNumber = maxNumber;
+                RaisePropertyChanged(nameof(FunctionNumber));
+                UpdateBinaryHints();
+            }
         }
 
         /// <summary>
